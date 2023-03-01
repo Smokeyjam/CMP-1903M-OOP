@@ -8,8 +8,13 @@ namespace CMP1903M_A01_2223
 {
     class Program
     {
+        //static List<Card> pack = new List<Card>();
+
         static void Main(string[] args)
         {
+            Pack P = new Pack();
+            Pack.shuffleCardPack(1);
+            Console.ReadLine();
 
         }
     }

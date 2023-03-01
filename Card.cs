@@ -14,5 +14,25 @@ namespace CMP1903M_A01_2223
         //The 'set' methods for these properties could have some validation
         public int Value { get; set; }
         public int Suit { get; set; }
+
+        public void setValue(int Value)
+        {
+            this.Value = Value;
+        }
+
+        public void setSuit(int Suit)
+        {
+            this.Suit = Suit;
+        }
+
+        public int getValue()
+        {
+            return Value;
+        }
+
+        public int getSuit()
+        {
+            return Suit;
+        }
     }
 }
