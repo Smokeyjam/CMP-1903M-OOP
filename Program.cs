@@ -13,7 +13,7 @@ namespace CMP1903M_A01_2223
         static void Main(string[] args)
         {
             Pack P = new Pack();
-            Pack.shuffleCardPack(1);
+            Pack.shuffleCardPack(2); // 1 is Fisher-Yates Shuffle and 2 is the riffle shuffle
             Console.ReadLine();
 
         }

@@ -75,15 +75,44 @@ namespace CMP1903M_A01_2223
                     //go back to first
                 }
             }
-            /*if (typeOfShuffle == 2)
+            //riffle shuffle 
+            if (typeOfShuffle == 2)
             {
+                //split the deck into two halves
+                // pack.Count()/2 
+                // then for card card in pack check if the id is greater than 26 
+                // add to the shuffle list 
+                // for each card left in the original pack put the current object before it
+                int RiffleNum = 26;
+                int n = 0;
+                while (pack.Count() != 26)
+                { 
 
-            }*/
+                    ShuffledPack.Add(pack[RiffleNum]);
+                    pack.Remove(pack[RiffleNum]);
+                }
+                
+                while (ShuffledPack.Count() != 52)
+                {
 
+                    ShuffledPack.Insert((2n-1), pack[n])
+                    pack.Remove(pack[n]);
+                    n += 1;
+                }
+                
+            }
+            //for reading the first half of the new shuffle 
+            Console.WriteLine("\nthis is what's left in the orginal pack");
+                foreach (Card card in pack)
+                {
+                     Console.WriteLine(card.getValue() + " " + card.getSuit());
+                }
+            
             Console.WriteLine("ShuffledPack contents \n");  
 
             foreach (Card card in ShuffledPack)
             {
+                
                 Console.WriteLine(card.getValue() + " " + card.getSuit());
             }
             Console.WriteLine(ShuffledPack.Count());
