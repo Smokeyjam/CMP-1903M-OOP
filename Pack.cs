@@ -10,7 +10,9 @@ namespace CMP1903M_A01_2223
     public class Pack
     {
         static List<Card> pack = new List<Card>();
+        static List<Card> pack2 = new List<Card>();
         static List<Card> ShuffledPack = new List<Card>();
+        static List<Card> Dealt_Hand = new List<Card>();
 
         public Pack()
         {
@@ -84,20 +86,21 @@ namespace CMP1903M_A01_2223
                 // add to the shuffle list 
                 // for each card left in the original pack put the current object before it
                 int RiffleNum = 26;
-                int n = 0;
+
                 while (pack.Count() != 26)
                 { 
 
-                    ShuffledPack.Add(pack[RiffleNum]);
+                    pack2.Add(pack[RiffleNum]);
                     pack.Remove(pack[RiffleNum]);
                 }
                 
                 while (ShuffledPack.Count() != 52)
                 {
 
-                    ShuffledPack.Insert((2n-1), pack[n])
-                    pack.Remove(pack[n]);
-                    n += 1;
+                    ShuffledPack.Add(pack[0]);
+                    ShuffledPack.Add(pack2[0]);
+                    pack.Remove(pack[0]);
+                    pack2.Remove(pack2[0]);
                 }
                 
             }
@@ -119,14 +122,20 @@ namespace CMP1903M_A01_2223
             return true;
             
         }
-        /*public static Card deal()
+        public static Card deal()
         {
-            //Deals one card
-
+            //deals one card
+            Dealt_Hand.Add(ShuffledPack[0]);
+            ShuffledPack.Remove(ShuffledPack[0]);
         }
         public static List<Card> dealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
-        } */
+            while (amount > 0)
+            {
+                deal();
+            }
+            return dealCard.list();
+        } 
     }
 }
